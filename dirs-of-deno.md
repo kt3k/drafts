@@ -17,7 +17,17 @@ Deno のディレクトリ構造は何度も劇的に変わっていますので
 
 ```
 deno/
-
+├── core
+│   └── libdeno
+├── cli
+│   ├── compilers
+│   ├── js
+│   ├── ops
+│   └── tests
+├── deno_typescript
+├── std
+├── third_party
+└── tools
 ```
 
 以下では各ディレクトリの役割について見ていきます.
@@ -38,6 +48,14 @@ Deno の API が実装される場所です.
 
 Deno の API の TypeScript 側の実装が配置されています. 典型的には Deno の Op を dispatch して結果を適切に返すという形の API 実装が多くを占めますが, EventTarget の実装など完全に TypeScript で完結して実装されている Deno の API なども多数あります.
 
+# cli/ops
+
+# cli/compiler
+
+# cli/tests
+
+インテグレーションテストが
+
 # tools
 
 Deno をビルドするために必要な各種ツールが配置されています. ツールの大部分は現状では Python2 で書かれています. Python で書かれている理由はクロスプラットフォームで安定して使えるスクリプト言語として Python が選ばれたという経緯があります. また, Python 3 ではなくて 2 である理由は, V8 のビルドが Python 2 に依存しているからという理由があります. Chrome チームは現在急ピッチで Python 2 の EOL 対応 (Python 3 移行) を進めている気配があるため, 来年には Deno の Python スクリプトも Python 3 に移行している可能性が高いと思われます.
@@ -53,3 +71,7 @@ Deno の標準モジュールを実装する場所です. Deno の標準モジ�
 # deno_typescript
 
 このディレクトリにあるのはかなり不思議なプログラムです. このディレクトリにあるプログラムは基本的には Deno の TypeScript で実装されたスクリプト群のバンドラーのようなものですが, とても面白い挙動をします. バンドラーというと browserify / webpack / rollup のような JavaScript のモジュール関係を解決した大きな JavaScript ファイルを返すプログラムを指しますが, deno_typescript はバンドルした結果を V8 スナップショットというバイナリ形式で返します. 具体的に何をしているかというと, deno core に typescript を読み込ませた V8 isolate を作りこれに typescript で書かれた cli/js 以下のファイルをコンパイルさせます. そして snapshot を作るための別の V8 isolate にコンパイルしたコードを次々と load して行きます. これには V8 の loadModule という API が利用できます. 最後に必要なスクリプトが全てロードされた V8 isolate でスナップショットを取ります. このスナップショットを Deno 本体にバイナリとしてバンドルすることで cli/js 以下の Deno 実装をまとめて1ファイルとしてバンドルしたかのようになるのです. つまり Deno は V8 自体をスクリプトのバンドラーとして使っていると見ることが出来ます.
+
+# まとめ
+
+今日は Deno のディレクトリ構造について説明しました. 8日目の Deno にコントリビュートする (1) と合わせて読むと, Deno にコントリビュートする際の見通しがつきやすくなるでしょう.
