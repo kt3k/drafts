@@ -32,7 +32,7 @@ Layer の追加画面で, 「レイヤーバージョン ARN を提供」を選�
 
 <img src="https://raw.githubusercontent.com/kt3k/drafts/master/assets/deno-lambda/step5.png" />
 
-次に Lambda 関数を書いていきます. 関数の入力欄を選択し, ハンドラーを "handler.main" と入力し, handler.ts というファイルを作成します. handler.ts の内容は以下の内容を入力してください.
+次に Lambda 関数を書いていきます. 関数の入力欄を選択し, ハンドラーを `handler.main` と入力し, handler.ts というファイルを作成します. handler.ts の内容は以下の内容を入力してください.
 
 ```ts
 import { Context, Event } from "https://deno.land/x/lambda/mod.ts";
