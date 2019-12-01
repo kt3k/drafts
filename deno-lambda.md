@@ -2,7 +2,7 @@
 
 Deno Advent Calendar 4日目の記事です.
 
-今日は Deno で AWS Lambda 関数を実装するためのツール [deno-lambda](https://github.com/hayd/deno-lambda) の使い方を紹介します.
+今日は Deno で AWS Lambda 関数を実装するためのツール [deno-lambda](https://github.com/hayd/deno-lambda) の使い方を紹介します. deno-lambda は @hayd Andy Hayden さんが作った, Deno で Lambda 関数を実装するための各種ツールを集めたツールです.
 
 # 手順
 
