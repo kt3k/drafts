@@ -53,9 +53,9 @@ https://deno.land/x/ という URL に行くと Deno の 3rd party モジュー�
 
 日本語では過去に以下のようなコードリーディング記事が上がってきています.
 
-- [Deno をよむ(1)](https://blog.bokuweb.me/archive/2019/01/11) by bokuweb
-- [deno_code_reading.md](https://gist.github.com/mizchi/31e5628751330b624a0e8ada9e739b1e) by mizchi
-- [Dive into Deno：プロセス起動からTypeScriptが実行されるまで](https://blog.leko.jp/post/code-reading-of-deno-boot-process/) by leko
+- [Deno をよむ(1)](https://blog.bokuweb.me/archive/2019/01/11) by @bokuweb
+- [deno_code_reading.md](https://gist.github.com/mizchi/31e5628751330b624a0e8ada9e739b1e) by @mizchi
+- [Dive into Deno：プロセス起動からTypeScriptが実行されるまで](https://blog.leko.jp/post/code-reading-of-deno-boot-process/) by @L_e_k_o
   - 上の改訂版が Denobook 2 第5章でよめます.
 
 Denobook 2 の Leko さんの記事が最も最新の内容に近いですが, それ以降も微妙に変わってきているため, 上記を踏まえた最新のコードリーディング記事が出てくると, Deno コミュニティに大きく貢献したことになります.
@@ -74,6 +74,6 @@ Deno 日本コミュニティは [scapbox](https://scrapbox.io/deno-ja/) に各�
 
 今日は本体にコントリビュートする以外での Deno にコントリビュートする方法を紹介しました.
 
-明日は @keroxp さんの「Denoと過ごした１年、現状そして展望」です.
+明日は @syumai さんの Wasm を動かす話です.
 
 [hp]: https://deno.land/
