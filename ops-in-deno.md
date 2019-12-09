@@ -13,11 +13,19 @@ Deno Advent Calendar 21日目の記事です.
 
 # Op とは
 
+古来より「Op を知るものは Deno を知る」(One who knows Op knows Deno) と言われるほどに Op は Deno にとって重要で基本的な概念です.
+
 Op は Deno の機能を作るための基本的な単位です. Op は Operation を省略した名前です.
 
 Op を理解するためには, まず Deno の全体的なアーキテクチャを理解する必要があります.
 
 <img src="" />
+
+上図で示すように Deno では V8 と Rust は Op を介してデータをやりとりすることで, V8 から Rust 側の様々な機能を呼び出せるような仕組みになっています.
+
+Op は V8 から Rust 側に出る際の gateway のような役割を果たしていて, この Op を発行するタイミングで Deno はランタイムが適切な Permission を持っているかをチェックします. たとえば read_file op を発行した場合は適切な `read` パーミッションを持っているかどうかをチェックします. パーミッションがなければ, このタイミングで PermissionError が throw され readFile 呼び出しは失敗します.
+
+なぜこのように Op を介して通信するようにするのでしょうか? もっと V8 に様々な機能を
 
 # Op の実装
 
