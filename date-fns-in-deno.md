@@ -1,6 +1,6 @@
 # date-fns を Deno から使う
 
-Deno Advent Calendar 18日目の記事です.
+Deno (ディーノ) Advent Calendar 18日目の記事です.
 
 今日は date-fns を Deno から使う話です.
 
@@ -12,7 +12,7 @@ date-fns は moment や [dayjs](https://github.com/iamkun/dayjs) などと違い
 
 具体的な date-fns の使い方を見てみましょう.
 
-```
+```js
 import { compareAsc, format } from 'date-fns'
 
 const label = format(new Date(2014, 1, 11), 'yyyy-MM-dd', {})
@@ -33,13 +33,13 @@ format は Date とフォーマット指定子を受け取って, フォーマ�
 
 compareAsc は Date を2つ受け取って, 大小関係を比較します, 上の例では sort の比較関数として利用しています.
 
-この例からも分かるように, date-fns の API は純粋な関数で, Date を入出力として使い, ライブライ自体が状態を持つ事がありません.
+この例からも分かるように, date-fns の API は純粋な関数で, Date を入出力として使い, ライブライ自体は状態を持ちません.
 
 # Deno から使うには
 
-date-fns を Deno から使うには以下のようにして API を import して使います.
+date-fns を Deno (ディーノ) から使うには以下のようにして API を import して使います.
 
-```
+```js
 import { compareAsc, format } from 'https://deno.land/x/date_fns/index.js'
 
 const label = format(new Date(2014, 1, 11), 'yyyy-MM-dd')
@@ -60,7 +60,7 @@ import 文以外は上の例と同じです. from に指定するモジュール
 
 上の例を実行すると分かりますが, この書き方の場合, date-fns 全体を一旦ローカルに全てダウンロードすることになります. これは `https://deno.land/x/date_fns/index.js` というスクリプトが date-fns の全ての API を内部で import しているからです. 次のように import 文を書き換えると, date-fns の必要部分だけを import する事が出来ます.
 
-```
+```js
 import compareAsc from 'https://deno.land/x/date_fns/compareAsc/index.js'
 import format from 'https://deno.land/x/date_fns/format/index.js'
 
@@ -69,7 +69,7 @@ import format from 'https://deno.land/x/date_fns/format/index.js'
 
 # date-fns が Deno から使える理由
 
-date-fns が Deno で使えることは, Deno で本格的な時間の処理が必要なアプリが十分書けるということを意味するため大変重要なことです.
+date-fns が Deno で使えることは, Deno で本格的な時間の処理が行えることを意味します. 大抵の Web サービスではかなりややこしい時間の処理が発生するため, これは Deno のエコシステムにとって重要な意味があります.
 
 では, date-fns を Deno に移植するために Deno チームはどのくらいの時間をかけたのでしょうか? 実は全く何もしていないのです. data-fns は [src 以下のソースコード](https://github.com/date-fns/date-fns/tree/master/src)をブラウザで直接 import できるようなスタイルでプログラミングしています (npm にはそれを transpile したコードを publish しています). Deno の import は可能な限りブラウザの import と同じルールで path を解決するという方針で作られているため, ブラウザ用の date-fns が Deno でそのまま使えたのでした.
 
