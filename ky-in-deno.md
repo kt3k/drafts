@@ -1,6 +1,6 @@
 # ky を Deno から使う
 
-Deno (ディーノ) <img src="https://raw.githubusercontent.com/kt3k/drafts/master/assets/deno.png" width="20"> Advent Calendar 24日目の記事です.
+Deno (ディーノ) <img src="https://raw.githubusercontent.com/kt3k/drafts/master/assets/deno.png" width="20"> Advent Calendar 25日目の記事です.
 
 今日は ky というライブラリを Deno から使う話です.
 
@@ -47,6 +47,10 @@ console.log(JSON.stringify(parsed, null, 2));
 ```
 
 promise を2回 await している点 (HTTP ヘッダーが帰ってきた時点と, レスポンス全体が帰ってきた時点で分けて promise を待っています) や, body が JSON であることを明示的に設定している点などが煩雑ですね. このような煩雑さを回避して, JSON を送って JSON を受け取るリクエストを自然に実行できる所に ky の手軽さがあります.
+
+## ts で使う場合の注意点
+
+現在 ky はまだ ts に対応できていません. ts から使う場合は import した ky を一旦 any にキャストするか, 各自で適切に型付けする必要があります.
 
 # ky の Deno サポート
 
