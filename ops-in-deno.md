@@ -7,7 +7,7 @@
 - ソースを読む前になんらかの大きな全体像を掴みたいと思っている人
 -->
 
-Deno Advent Calendar 21日目の記事です.
+Deno (ディーノ) <img src="https://raw.githubusercontent.com/kt3k/drafts/master/assets/deno.png" width="20"> Advent Calendar 21日目の記事です.
 
 今日は Deno の Op という単位について説明します.
 
