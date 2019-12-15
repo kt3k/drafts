@@ -4,11 +4,11 @@ Deno (ディーノ) <img src="https://raw.githubusercontent.com/kt3k/drafts/mast
 
 今日は ky というライブラリを Deno から使う話です.
 
-# ky とは
+# [ky][] とは
 
 <img src="https://raw.githubusercontent.com/kt3k/drafts/master/assets/ky-in-deno/ky.png" width="300" />
 
-ky は HTTP client ライブラリです. HTTP client というと [axios](https://github.com/axios/axios) が有名ですが, Deno は XHR (XMLHttpRequest) オブジェクトを持たないため axios を使うことは出来ません. XHR ベースではなく fetch ベースの手軽な HTTP Client が ky です.
+[ky][] は HTTP client ライブラリです. HTTP client というと [axios](https://github.com/axios/axios) が有名ですが, Deno は XHR (XMLHttpRequest) オブジェクトを持たないため axios を使うことは出来ません. XHR ベースではなく fetch ベースの手軽な HTTP Client が ky です.
 
 Deno から ky を使うには以下のように使います.
 
@@ -55,3 +55,5 @@ ky の Deno サポートはオフィシャルなものです. [date-fns のケ�
 # Recap
 
 今日は ky を Deno から使う方法を紹介しました.
+
+[ky]: https://github.com/sindresorhus/ky
