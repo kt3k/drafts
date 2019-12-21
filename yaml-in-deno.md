@@ -6,7 +6,7 @@ Deno (ディーノ) <img src="https://raw.githubusercontent.com/kt3k/drafts/mast
 
 # YAML モジュール
 
-Deno は標準ライブラリとして YAML モジュールを持っていて, parse, stringify などの API を使って YAML のパースやシリアライズを行うことが出来ます.
+Deno は標準ライブラリで YAML モジュールを持っていて, parse, stringify などの API を使って YAML のパースやシリアライズを行うことが出来ます.
 
 ```ts
 import { parse, stringify } from "https://deno.land/std/encoding/yaml.ts";
@@ -65,6 +65,10 @@ name: Eve
 console.log(data);
 // => [ { id: 1, name: "Alice" }, { id: 2, name: "Bob" }, { id: 3, name: "Eve" } ]
 ```
+
+# YAML モジュールの歴史
+
+YAML モジュールは [js-yaml](https://github.com/nodeca/js-yaml) という npm で一番よく使われている YAML ライブラリがベースになっています. YAML モジュールの[最初の移植作業](https://github.com/denoland/deno/pull/3361)はフランスの Deno meetup である [Paris Deno](https://www.meetup.com/ja-JP/Paris-Deno/) のオーガナイザの Lilian Saget-Lethias ( [@bios21](https://github.com/bios21) ) さんによって行われました.
 
 # まとめ
 
