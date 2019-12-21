@@ -78,13 +78,13 @@ Deno は Op という仕組みを使って TypeScript と Rust が通信し合�
 
 今このディレクトリに残っているものは V8 のソースコードとビルド用スクリプト類, リントに使っている npm modules, tools で使っている python packages などですが, いずれも将来的には無くなる方針のため, 将来的には third_party という依存の管理方法は無くなることが予想されます.
 
-# std
+# std/
 
 `std/` では Deno の標準モジュールが実装されています. 標準モジュールは基本的には TypeScript で書かれています. 一部, 外部からコピーで持ってきたスクリプト類 (prettier など) は .js になっているものもあります.
 
 標準モジュールはまだまだ発展途上のため, これからいろいろなモジュールを提案する余地があります. また, 多くの標準モジュールがほとんど誰も実際に使っていない, というようなものが多いと思われるため, バグを踏む可能性はまだまだ多いです. 筆者 <img src="https://raw.githubusercontent.com/kt3k/drafts/master/assets/kt3k.jpg" width="20" /> が先日 YAML モジュールの parseAll という API を使おうとしたところ, [全く動いておらず](https://github.com/denoland/deno/issues/3534), テストも書かれておらず, この API はおそらく誰も叩いたことがなかったであろうことが露見するということがありました ([自分で直しました](https://github.com/denoland/deno/pull/3535)). 良く言えば, いくらでもコントリビュートできる, 悪く言えば, ほぼ使い物にならないのが今の標準モジュールの状態です.
 
-# deno_typescript
+# deno_typescript/
 
 このディレクトリには Deno の API の ts 実装のための専用のバンドラープログラムが含まれています. 以前は Deno の API のバンドルには rollup (その前は parcel) が使われていましたが, できるだけ node の依存を減らしたいという方針があるため, deno のコア機能と TypeScript コンパイラーと AMD のローダを組み合わせて (TS 以外の)外部ツールに依存せずに Deno API をバンドルしているのが deno_typescript です.
 
