@@ -1,6 +1,6 @@
 # ky を Deno から使う
 
-Deno (ディーノ) <img src="https://raw.githubusercontent.com/kt3k/drafts/master/assets/deno.png" width="20"> Advent Calendar 25日目の記事です.
+Deno (ディーノ) <img src="https://raw.githubusercontent.com/kt3k/drafts/master/assets/deno.png" width="20"> Advent Calendar 21日目の記事です.
 
 今日は ky というライブラリを Deno から使う話です.
 
