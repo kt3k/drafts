@@ -1,4 +1,4 @@
-# Deno で yaml を扱う
+# Deno で YAML を扱う
 
 Deno (ディーノ) <img src="https://raw.githubusercontent.com/kt3k/drafts/master/assets/deno.png" width="20"> Advent Calendar 25日目の記事です.
 
